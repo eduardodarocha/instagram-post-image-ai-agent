@@ -5,7 +5,7 @@ This project uses a team of AI agents to generate Instagram posts and suggest ac
 ## Features
 
 - **Content Generation:** Creates engaging and SEO-friendly Instagram captions.
-- **Image Suggestions:** Generates prompts for creating relevant images for the posts.
+- **Image Creation:** Generates prompts and creates relevant images for the posts.
 - **Specialized Agents:** Utilizes a "Writer" agent for content and an "Illustrator" agent for image prompts.
 - **Team-based Approach:** A "Coordinator" agent manages the workflow between the specialized agents.
 
@@ -17,15 +17,15 @@ This project uses a team of AI agents to generate Instagram posts and suggest ac
    cd instagram-post-image-agents
    ```
 
-2. **Create a virtual environment:**
+2. **Create and activate a virtual environment:**
    ```bash
-   python -m venv .venv
+   uv venv
    source .venv/bin/activate  # On Windows, use `.venv\Scripts\activate`
    ```
 
 3. **Install the dependencies:**
    ```bash
-   pip install -r requirements.txt
+   uv pip install -r requirements.txt
    ```
 
 ## Gemini API Key
