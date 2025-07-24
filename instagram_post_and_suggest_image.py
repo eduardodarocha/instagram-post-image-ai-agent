@@ -9,7 +9,7 @@ Original file is located at
 https://towardsdatascience.com/agentic-ai-103-building-multi-agent-teams/
 """
 
-!pip install agno duckduckgo-search google-genai
+
 
 # Imports
 import os
@@ -18,7 +18,6 @@ from agno.agent import Agent
 from agno.models.google import Gemini
 from agno.team import Team
 from agno.models.google import Gemini
-import google.generativeai as genaigen
 from agno.tools.duckduckgo import DuckDuckGoTools
 from agno.tools.file import FileTools
 from pathlib import Path
@@ -98,11 +97,15 @@ writing_team = Team(
 # Prompt
 prompt = "Write a post about: Wine and sugestion of food to accompany."
 
-# Get the API key from Colab's secrets manager and set it as an environment variable
 import os
-from google.colab import userdata
+from dotenv import load_dotenv
 
-os.environ["GOOGLE_API_KEY"] = userdata.get("GOOGLE_API_KEY")
+load_dotenv()
+
+# Get the API key from the environment variable
+api_key = os.getenv("GEMINI_API_KEY")
+if not api_key:
+    raise ValueError("GEMINI_API_KEY not found in environment variables. Please set it in a .env file or as an environment variable.")
 
 # Run the team with a task
 writing_team.print_response(prompt)
@@ -184,5 +187,5 @@ for chave, valor in response:
 #     print(f"Item {i} → Tipo: {type(item)}")
 #     print(f"Conteúdo: {str(item)[:100]}...")
 
-for model in client.models.list():
-    print(model.name)
+# for model in client.models.list():
+#     print(model.name)
