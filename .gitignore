@@ -297,3 +297,9 @@ pip-selfcheck.json
 .DS_Store
 
 # End of https://www.toptal.com/developers/gitignore/api/python,venv,visualstudiocode,pycharm+all
+
+# Ignore output directory
+output/
+
+# Ignore image files
+*.png
