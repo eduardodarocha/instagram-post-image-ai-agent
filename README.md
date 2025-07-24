@@ -36,7 +36,11 @@ This project uses the Google Gemini API. To get your API key, follow these steps
 2. Click on **"Get API key"**.
 3. Create a new project or select an existing one.
 4. Your API key will be generated.
-5. Set the API key as an environment variable named `GEMINI_API_KEY`.
+5. Create a `.env` file in the root of the project by copying the `.env_example` file:
+   ```bash
+   cp .env_example .env
+   ```
+6. Open the `.env` file and replace `YOUR_API_KEY` with your actual Gemini API key.
 
 ## Main Libraries
 
